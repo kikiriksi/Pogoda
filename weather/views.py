@@ -31,3 +31,8 @@ class Info(View):
         form = CityForm(request.POST)
         form.save()
         return redirect('/')
+
+def delit(request, city):
+    city = City.objects.filter(name=city)
+    city.delete()
+    return redirect('/')

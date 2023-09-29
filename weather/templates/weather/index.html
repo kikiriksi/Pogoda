@@ -32,9 +32,12 @@
                 <h1>Информация</h1>
                 {% for info in all_info %}
                 <div class="alert alert-danger">
-                    <b>Город: {{ info.city }}</b><br>
-                    <b>Температура: {{ info.temp }}</b> <sup>o</sup>
-                    <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="Фото погоды"class="img-thumbnail">
+                    <form action="{% url 'delit' info.city %}">
+                        <b>Город: {{ info.city }}</b><br>
+                        <b>Температура: {{ info.temp }}</b> <sup>o</sup>
+                        <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="Фото погоды"class="img-thumbnail">
+                        <button type="submit" class="mt-2 btn btn-danger">Удалить</button>
+                    </form>
                 </div>
                 {% endfor %}
             </div>
