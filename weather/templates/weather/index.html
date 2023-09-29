@@ -15,8 +15,6 @@
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
         <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Главная</a>
         <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Информация</a>
-        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Support</a>
-        <a class="py-2 link-body-emphasis text-decoration-none" href="#">Pricing</a>
       </nav>
     </div>
     <div class="container mt-5">
@@ -31,11 +29,13 @@
             </div>
             <div class="col-4 offser-2">
                 <h1>Информация</h1>
+                {% for info in all_info %}
                 <div class="alert alert-danger">
                     <b>Город: {{ info.city }}</b><br>
                     <b>Температура: {{ info.temp }}</b> <sup>o</sup>
                     <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="Фото погоды"class="img-thumbnail">
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
